@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use — The Pitch</title>
+<meta name="description" content="The terms that govern your use of The Pitch.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%237C3AED'/%3E%3Cpath d='M40 32l30 18-30 18z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#7C3AED;--purple-deep:#5B21B6;--purple-light:#A78BFA;--purple-bright:#9D5CFF;
+    --ink:#0C0718;--ink-2:#150C28;--paper:#F6F4FF;--card:#FFFFFF;
+    --text:#1B1330;--text-2:#5B5273;--line:#E7E1FA;--cloud:#F5F3FF;--muted:#9A8FB8;--muted-2:#6E6488;
+    --display:"Bricolage Grotesque",system-ui,sans-serif;--body:"Instrument Sans",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--paper);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--purple-deep);text-decoration:none}
+  a:hover{text-decoration:underline}
+  ::selection{background:var(--purple);color:#fff}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+
+  nav{background:var(--ink);border-bottom:1px solid rgba(167,139,250,.16)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:800;font-size:1.18rem;letter-spacing:-.02em;color:var(--cloud)}
+  .brand:hover{text-decoration:none}
+  .brand-mark{width:28px;height:28px;border-radius:8px;background:linear-gradient(145deg,var(--purple-bright),var(--purple-deep));display:grid;place-items:center;box-shadow:0 4px 14px rgba(124,58,237,.5)}
+  .brand-mark svg{width:12px;height:12px;transform:translateX(1px)}
+  .nav-back{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--muted)}
+  .nav-back:hover{color:var(--cloud);text-decoration:none}
+
+  .band{background:radial-gradient(120% 140% at 85% -20%,#2a1856 0%,#130a26 60%,#0c0718 100%);color:var(--cloud);
+        padding:clamp(48px,7vw,84px) 0 clamp(40px,5vw,60px);border-bottom:1px solid rgba(167,139,250,.18)}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--purple-light);
+           display:inline-flex;align-items:center;gap:.6em}
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--purple-light);opacity:.6}
+  .band h1{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,5.4vw,3.6rem);letter-spacing:-.03em;line-height:1.02;margin:1rem 0 .9rem}
+  .band .updated{font-family:var(--mono);font-size:.8rem;color:var(--muted);letter-spacing:.04em}
+
+  .doc{display:grid;grid-template-columns:230px 1fr;gap:clamp(32px,5vw,68px);padding:clamp(40px,6vw,72px) 0 90px;align-items:start}
+  .toc{position:sticky;top:24px;font-size:.9rem}
+  .toc h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-bottom:1rem}
+  .toc ol{list-style:none;counter-reset:t;display:flex;flex-direction:column;gap:.15rem}
+  .toc a{display:flex;gap:.6rem;padding:.4rem .6rem;border-radius:8px;color:var(--text-2);counter-increment:t;transition:background .18s,color .18s}
+  .toc a::before{content:counter(t,decimal-leading-zero);font-family:var(--mono);font-size:.72rem;color:var(--purple);opacity:.7}
+  .toc a:hover{background:#EEE9FC;color:var(--text);text-decoration:none}
+
+  .content{max-width:720px}
+  .content .lead{font-size:1.12rem;color:var(--text-2);margin-bottom:2.4rem}
+  .content section{padding-top:1.2rem;margin-bottom:2.4rem;scroll-margin-top:24px}
+  .content h2{font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:-.02em;margin-bottom:1rem;display:flex;align-items:baseline;gap:.7rem}
+  .content h2 .num{font-family:var(--mono);font-size:.85rem;font-weight:500;color:var(--purple);flex:none}
+  .content h3{font-family:var(--display);font-weight:700;font-size:1.08rem;margin:1.6rem 0 .6rem}
+  .content p{margin-bottom:1rem;color:var(--text)}
+  .content ul{margin:0 0 1rem 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:.6rem}
+  .content li{position:relative;padding-left:1.5rem;color:var(--text)}
+  .content li::before{content:"";position:absolute;left:.1rem;top:.62em;width:6px;height:6px;border-radius:2px;background:var(--purple-light)}
+  .content strong{font-weight:600;color:var(--text)}
+  .callout{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:12px;padding:1.1rem 1.3rem;margin:1.4rem 0}
+  .callout p{margin:0;font-size:.96rem;color:var(--text-2)}
+  .callout.warn{border-left-color:#EF4444}
+  .note{font-size:.86rem;color:var(--muted-2);font-style:italic}
+  .legal-emphasis{text-transform:uppercase;font-size:.92rem;letter-spacing:.01em}
+
+  footer{background:var(--ink-2);color:var(--muted);border-top:1px solid rgba(167,139,250,.16);padding:44px 0}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem}
+  .foot-inner a{color:var(--muted);margin-left:1.4rem}
+  .foot-inner a:hover{color:var(--cloud);text-decoration:none}
+
+  @media(max-width:860px){
+    .doc{grid-template-columns:1fr}
+    .toc{position:static;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:1.1rem 1.2rem;margin-bottom:1rem}
+    .toc ol{display:grid;grid-template-columns:1fr 1fr;gap:.1rem}
+  }
+  @media(max-width:560px){.wrap{padding:0 20px}.toc ol{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z" fill="#fff"/></svg></span>The Pitch</a>
+    <a class="nav-back" href="index.html">← BACK TO HOME</a>
+  </div>
+</nav>
+
+<div class="band">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1>Terms of Use</h1>
+    <p class="updated">LAST UPDATED: JULY 21, 2026</p>
+  </div>
+</div>
+
+<div class="wrap doc">
+  <aside class="toc">
+    <h4>On this page</h4>
+    <ol>
+      <li><a href="#accept">Acceptance</a></li>
+      <li><a href="#eligibility">Eligibility</a></li>
+      <li><a href="#account">Your account</a></li>
+      <li><a href="#service">What The Pitch is</a></li>
+      <li><a href="#content">Your content</a></li>
+      <li><a href="#conduct">Acceptable use</a></li>
+      <li><a href="#moderation">Objectionable content</a></li>
+      <li><a href="#employers">Employer terms</a></li>
+      <li><a href="#ip">Intellectual property</a></li>
+      <li><a href="#disclaimer">Disclaimers</a></li>
+      <li><a href="#liability">Liability</a></li>
+      <li><a href="#termination">Termination</a></li>
+      <li><a href="#law">Governing law</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </aside>
+
+  <main class="content">
+    <p class="lead">These Terms are the agreement between you and The Pitch. They cover what you can expect from us, what we expect from you, and the rules that keep the community usable for everyone. Please read them — using the app means you accept them.</p>
+
+    <p>The Pitch (the "Service") is operated by Apixo ("we", "our", "us"). "You" means the person or organization using the Service.</p>
+
+    <section id="accept">
+      <h2><span class="num">01</span> Acceptance of these terms</h2>
+      <p>By creating an account or using the Service, you agree to these Terms of Use and to our <a href="privacy_policy.html">Privacy Policy</a>. If you don't agree, please don't use The Pitch.</p>
+    </section>
+
+    <section id="eligibility">
+      <h2><span class="num">02</span> Eligibility</h2>
+      <ul>
+        <li>You must be at least <strong>18 years old</strong> to use the Service.</li>
+        <li>You must be able to form a binding contract, and, where relevant, be legally permitted to work or to hire.</li>
+        <li>If you use The Pitch on behalf of a company, you confirm you're authorized to bind that company to these Terms.</li>
+      </ul>
+    </section>
+
+    <section id="account">
+      <h2><span class="num">03</span> Your account</h2>
+      <ul>
+        <li>Provide accurate information and keep it up to date.</li>
+        <li>Keep your login credentials secure. You're responsible for activity under your account.</li>
+        <li>One person, one account. Don't impersonate anyone or misrepresent who you are.</li>
+        <li>Tell us promptly if you suspect unauthorized use of your account.</li>
+      </ul>
+    </section>
+
+    <section id="service">
+      <h2><span class="num">04</span> What The Pitch is (and isn't)</h2>
+      <p>The Pitch is a platform that helps candidates present themselves through a short video and helps employers discover them. We provide the tools for connection — we don't participate in the hiring itself.</p>
+      <div class="callout"><p>We are <strong>not an employer, recruiter, or party to any employment relationship</strong>. We don't guarantee that a candidate will find a job, that an employer will find a hire, or that any user is who they claim to be. Hiring decisions, offers, and employment are entirely between candidates and employers.</p></div>
+    </section>
+
+    <section id="content">
+      <h2><span class="num">05</span> Your content</h2>
+      <p>You keep ownership of the content you create — your pitch video, profile details, job posts, and anything else you add ("Your Content").</p>
+      <p>To operate the Service, you grant us a worldwide, non-exclusive, royalty-free license to host, store, reproduce, and display Your Content <strong>solely to run and improve the Service</strong> — for example, showing your pitch to employers. This license ends when you delete the content or your account, except for copies retained briefly in backups or as required by law.</p>
+      <ul>
+        <li>You're responsible for Your Content and confirm you have the rights to share it.</li>
+        <li>Don't upload anything that infringes someone else's rights or that you don't have permission to use.</li>
+      </ul>
+    </section>
+
+    <section id="conduct">
+      <h2><span class="num">06</span> Acceptable use</h2>
+      <p>Keep The Pitch a place people want to be. You agree not to:</p>
+      <ul>
+        <li>Post content that is unlawful, harassing, hateful, threatening, defamatory, obscene, or discriminatory.</li>
+        <li>Impersonate others, post fake profiles or listings, or deceive users.</li>
+        <li>Spam, scrape, or harvest data, or use bots or automated access.</li>
+        <li>Attempt to reverse engineer, disrupt, or compromise the Service or its security.</li>
+        <li>Use the Service for anything other than genuine hiring and job-seeking.</li>
+        <li>Break any applicable law, including employment and anti-discrimination laws.</li>
+      </ul>
+    </section>
+
+    <section id="moderation">
+      <h2><span class="num">07</span> Objectionable content &amp; your safety tools</h2>
+      <div class="callout warn"><p class="legal-emphasis"><strong>There is zero tolerance for objectionable content or abusive behavior on The Pitch.</strong></p></div>
+      <p>To keep the community safe, the Service gives you tools and gives us the means to act:</p>
+      <ul>
+        <li><strong>Report</strong> any pitch, profile, or job post you believe breaks these Terms.</li>
+        <li><strong>Block</strong> any user so their content is hidden from you and yours from them.</li>
+        <li>We review reports and aim to act on objectionable content within 24 hours, which may include removing content and suspending or terminating the responsible account.</li>
+      </ul>
+      <p>We may remove content or restrict accounts that violate these Terms, at our discretion, to protect users and the Service.</p>
+    </section>
+
+    <section id="employers">
+      <h2><span class="num">08</span> Additional terms for employers</h2>
+      <ul>
+        <li>You're solely responsible for your job posts, your evaluation of candidates, and your hiring decisions.</li>
+        <li>You must comply with all applicable employment, labor, privacy, and anti-discrimination laws.</li>
+        <li>Use candidate information only to evaluate candidates for genuine roles — never to harass, discriminate, or for unrelated purposes.</li>
+      </ul>
+    </section>
+
+    <section id="ip">
+      <h2><span class="num">09</span> Our intellectual property</h2>
+      <p>The Service — including the app, the website, the name "The Pitch", our logo, and our design — belongs to us and is protected by law. These Terms don't give you any right to use our branding without our written permission.</p>
+    </section>
+
+    <section id="disclaimer">
+      <h2><span class="num">10</span> Disclaimers</h2>
+      <p>The Service is provided <strong>"as is" and "as available"</strong>, without warranties of any kind, whether express or implied, to the fullest extent permitted by law. We don't warrant that the Service will be uninterrupted, error-free, or secure, that any user is trustworthy, or that using The Pitch will result in a job or a hire.</p>
+    </section>
+
+    <section id="liability">
+      <h2><span class="num">11</span> Limitation of liability</h2>
+      <p>To the fullest extent permitted by law, The Pitch and Apixo will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for lost profits, data, or goodwill, arising from your use of the Service. Our total liability for any claim relating to the Service is limited to the greater of the amount you paid us in the past 12 months or USD $100.</p>
+    </section>
+
+    <section id="termination">
+      <h2><span class="num">12</span> Termination</h2>
+      <ul>
+        <li>You can stop using the Service and delete your account at any time in <strong>Settings → Delete Account</strong>.</li>
+        <li>We may suspend or terminate access if you violate these Terms or to protect users and the Service.</li>
+        <li>Provisions that by their nature should survive termination (such as content licenses for retained backups, disclaimers, and liability limits) will continue to apply.</li>
+      </ul>
+    </section>
+
+    <section id="law">
+      <h2><span class="num">13</span> Governing law</h2>
+      <p>These Terms are governed by the laws of the State of [Your State], without regard to conflict-of-law rules, and any disputes will be handled in the courts located there — unless local law grants you rights that can't be waived.</p>
+      <p class="note">Placeholder — set your governing jurisdiction before publishing.</p>
+    </section>
+
+    <section id="changes">
+      <h2><span class="num">14</span> Changes to these terms</h2>
+      <p>We may update these Terms as the Service changes. We'll revise the "Last updated" date, and for material changes we'll give notice in the app. Continuing to use the Service after an update means you accept the revised Terms.</p>
+    </section>
+
+    <section id="contact">
+      <h2><span class="num">15</span> Contact us</h2>
+      <p>Questions about these Terms? Reach us at <a href="mailto:support@thepitch.app">support@thepitch.app</a>.</p>
+      <p class="note">Placeholder contact — replace with your real support address before publishing.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© 2026 The Pitch · operated by Apixo</span>
+    <span>
+      <a href="index.html">Home</a>
+      <a href="privacy_policy.html">Privacy Policy</a>
+      <a href="mailto:support@thepitch.app">Contact</a>
+    </span>
+  </div>
+</footer>
+</body>
+</html>
