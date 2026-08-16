@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["H4Q7YJM24S.com.apixo.thepitch"],
+        "components": [
+          {
+            "/": "/apply/*",
+            "comment": "Employer storefront — opens EmployerStorefrontView via DeepLinkRouter"
+          }
+        ]
+      }
+    ]
+  }
+}

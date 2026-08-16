@@ -1,14 +1,14 @@
-# Pointing thepitch.com at GitHub Pages
+# Pointing thepitchme.com at GitHub Pages
 
 DNS + GitHub setup to serve the site in this repo (`Apixo/ThePitchWebsite`) at
-**thepitch.com**. Do the two halves in order: DNS records first, then tell GitHub
+**thepitchme.com**. Do the two halves in order: DNS records first, then tell GitHub
 about the custom domain.
 
 ---
 
 ## 1. Add DNS records in GoDaddy
 
-1. Sign in at [godaddy.com](https://godaddy.com) → **My Products** → **thepitch.com**
+1. Sign in at [godaddy.com](https://godaddy.com) → **My Products** → **thepitchme.com**
    → **DNS** (Manage DNS).
 2. In **Records**, first **delete any existing `A` record on host `@`** (GoDaddy
    ships a default parked A record — remove it or it will conflict).
@@ -54,28 +54,54 @@ Requires Pages to be enabled first (Settings → Pages → Deploy from branch �
 / root).
 
 1. Go to **https://github.com/Apixo/ThePitchWebsite/settings/pages**.
-2. Under **Custom domain**, enter **`thepitch.com`** → **Save**.
+2. Under **Custom domain**, enter **`thepitchme.com`** → **Save**.
    This auto-commits a `CNAME` file to the repo — leave it in place.
 3. GitHub runs a DNS check; it goes green once the records propagate.
 4. Tick **Enforce HTTPS** (may take a few minutes while GitHub provisions the TLS
-   certificate). This makes `https://thepitch.com` valid — required for the App
+   certificate). This makes `https://thepitchme.com` valid — required for the App
    Store Privacy Policy URL.
 
 ---
 
 ## After it's live
 
-- `https://thepitch.com/`
-- `https://thepitch.com/privacy_policy.html`
-- `https://thepitch.com/terms_of_use.html`
+- `https://thepitchme.com/`
+- `https://thepitchme.com/privacy_policy.html`
+- `https://thepitchme.com/terms_of_use.html`
 
-`www.thepitch.com` redirects to the apex automatically.
+`www.thepitchme.com` redirects to the apex automatically.
+
+---
+
+## Universal Links (`apple-app-site-association`)
+
+`.well-known/apple-app-site-association` in this repo pairs with the
+`applinks:thepitchme.com` entitlement in the iOS app, so
+`https://thepitchme.com/apply/{employer_id}` opens the employer storefront
+in-app. `.nojekyll` sits alongside it because Jekyll strips dot-directories
+from the published site — without it, `.well-known/` never deploys.
+
+**Verify after deploying** — Apple's CDN wants `application/json`, and GitHub
+Pages picks the content type from the file extension (there isn't one here):
+
+```sh
+curl -sI https://thepitchme.com/.well-known/apple-app-site-association | grep -i content-type
+```
+
+If that comes back as `application/octet-stream` rather than
+`application/json`, Universal Links won't validate and the site needs a host
+that lets you set headers (Cloudflare Pages, Netlify). The app itself is
+unaffected either way — the link just opens in Safari instead.
+
+Two things still missing before the link fully works: the `/apply/{id}` page
+on this site (it currently 404s for anyone without the app), and the
+Associated Domains capability enabled on the App ID in the developer portal.
 
 ### Verify propagation
 
 ```sh
-dig +short thepitch.com       # → the four 185.199.x.153 IPs
-dig +short www.thepitch.com   # → apixo.github.io, then those IPs
+dig +short thepitchme.com       # → the four 185.199.x.153 IPs
+dig +short www.thepitchme.com   # → apixo.github.io, then those IPs
 ```
 
 ---
