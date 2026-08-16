@@ -81,17 +81,26 @@ Requires Pages to be enabled first (Settings → Pages → Deploy from branch �
 in-app. `.nojekyll` sits alongside it because Jekyll strips dot-directories
 from the published site — without it, `.well-known/` never deploys.
 
-**Verify after deploying** — Apple's CDN wants `application/json`, and GitHub
-Pages picks the content type from the file extension (there isn't one here):
+**Verified working 2026-08-16 — don't "fix" the content type.** GitHub Pages
+serves this file as `application/octet-stream` (it types by file extension and
+there isn't one), which reads like a violation of Apple's `application/json`
+requirement. It isn't a problem in practice: iOS doesn't fetch the origin, it
+fetches Apple's CDN, and the CDN ingested the file happily and re-serves it as
+proper JSON. Check the CDN, not the origin:
 
 ```sh
-curl -sI https://thepitchme.com/.well-known/apple-app-site-association | grep -i content-type
+curl -s https://app-site-association.cdn-apple.com/a/v1/thepitchme.com
 ```
 
-If that comes back as `application/octet-stream` rather than
-`application/json`, Universal Links won't validate and the site needs a host
-that lets you set headers (Cloudflare Pages, Netlify). The app itself is
-unaffected either way — the link just opens in Safari instead.
+A 200 with the file contents means Universal Links are good. A 404 means Apple
+hasn't ingested it — give it a few hours after a change, and only then suspect
+the content type (the fix would be a host that allows custom headers, e.g.
+Cloudflare Pages or Netlify via a `_headers` file).
+
+Note the CDN 404s for `www.thepitchme.com`, because the entitlement only claims
+the apex. Links the app generates are apex, so this is fine; if a `www` link
+ever needs to open in-app, add `applinks:www.thepitchme.com` to
+`ThePitch.entitlements` and serve the AASA there too.
 
 Two things still missing before the link fully works: the `/apply/{id}` page
 on this site (it currently 404s for anyone without the app), and the
